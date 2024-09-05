@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const BotonDesplegable = ({ onButtonClick }) => {
   const [desplegado, setDesplegado] = useState(false);
-
+//desplegable
   const toggleDesplegado = () => {
     setDesplegado(!desplegado);
   };
