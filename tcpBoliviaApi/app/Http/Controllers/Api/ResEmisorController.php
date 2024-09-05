@@ -2,10 +2,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Sala;
+use App\Models\ResEmisor;
 use Illuminate\Http\Request;
 
-class SalaController extends Controller
+class ResEmisorController extends Controller
 {
     /**
      * Muestra una lista de las salas.
@@ -14,8 +14,8 @@ class SalaController extends Controller
      */
     public function index()
     {
-        $salas = Sala::all();
-        return response()->json($salas);
+        $resEmisor = ResEmisor::all();
+        return response()->json($resEmisor);
     }
 
     /**
@@ -30,49 +30,49 @@ class SalaController extends Controller
             'nombre' => 'required|string|max:100',
         ]);
 
-        $sala = Sala::create($request->all());
+        $resEmisor= ResEmisor::create($request->all());
 
-        return response()->json($sala, 201);
+        return response()->json($resEmisor, 201);
     }
 
     /**
      * Muestra una sala específica.
      *
-     * @param  \App\Models\Sala  $sala
+     * @param  \App\Models\ResEmisor  $sala
      * @return \Illuminate\Http\Response
      */
-    public function show(Sala $sala)
+    public function show(ResEmisor $resEmisor)
     {
-        return response()->json($sala);
+        return response()->json($resEmisor);
     }
 
     /**
      * Actualiza una sala existente en la base de datos.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Sala  $sala
+     * @param  \App\Models\ResEmisor  $resEmisor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sala $sala)
+    public function update(Request $request, ResEmisor $resEmisor)
     {
         $request->validate([
             'nombre' => 'required|string|max:100',
         ]);
 
-        $sala->update($request->all());
+        $resEmisor->update($request->all());
 
-        return response()->json($sala);
+        return response()->json($resEmisor);
     }
 
     /**
      * Elimina una sala de la base de datos.
      *
-     * @param  \App\Models\Sala  $sala
+     * @param  \App\Models\ResEmisor  $resEmisor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sala $sala)
+    public function destroy(ResEmisor $resEmisor)
     {
-        $sala->delete();
+        $resEmisor->delete();
 
         return response()->json(null, 204);
     }

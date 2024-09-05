@@ -6,13 +6,13 @@ use Illuminate\Database\Seeder;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Resolucion;
 use League\Csv\Reader;
-
-class SalasSeeder extends Seeder
+use Illuminate\Support\Facades\DB;
+class ResEmisorSeeder extends Seeder
 {
     public function run()
     {
 
-DB::table('salas')->insert([
+DB::table('res_emisores')->insert([
             ['nombre' => 'CA'],
             ['nombre' => 'SP1'],
             ['nombre' => 'SP2'],

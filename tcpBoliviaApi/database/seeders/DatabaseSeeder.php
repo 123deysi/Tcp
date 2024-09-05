@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
             MunicipiosSeeder::class,
             AccionesConstitucionalesSeeder::class,
             SubtiposAccionesSeeder::class,
+            TiposResoluciones2Seeder::class,
+            TiposResolucionesSeeder::class,
+            resEmisorSeeder::class,
         ]);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSalasTable extends Migration
+class CreateResEmisorTable extends Migration
 {
     /**
      * Ejecuta las migraciones.
@@ -13,13 +13,12 @@ class CreateSalasTable extends Migration
      */
     public function up()
     {
-        Schema::create('salas', function (Blueprint $table) {
+        Schema::create('res_emisores', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 100);
             $table->timestamps();
         });
     }
-
     /**
      * Revierte las migraciones.
      *
